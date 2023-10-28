@@ -1,3 +1,4 @@
 package com.example.lesson9
 
-data class Word(val word: String)
+@Entity(tableName = "word_table")
+class Word(@PrimaryKey @ColumnInfo(name = "word") val word: String)
