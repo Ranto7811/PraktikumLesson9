@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vitha.roomwordsample.R
 
 class MainActivity : AppCompatActivity() {
+    private val newWordActivityRequestCode = 1
     private val wordViewModel: WordViewModel by viewModels {
         WordViewModelFactory((application as WordsApplication).repository)
     }
