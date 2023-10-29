@@ -19,10 +19,15 @@ class MainActivity : AppCompatActivity() {
         val adapter = WordListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-        wordViewModel.allWords.observe(this,{ words ->
+        wordViewModel.allWords.observe (this,{ words ->
             // Update the cached copy of the words in the adapter.
             words?.let { adapter.submitList(it) }
         })
+        val fab = findViewById<FloatingActionButton>(R.id.fab)
+        fab.setOnClickListener {
+            val intent = Intent(this@MainActivity, NewWordActivity::class.java)
+            startActivityForResult(intent, newWordActivityRequestCode)
+        }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
