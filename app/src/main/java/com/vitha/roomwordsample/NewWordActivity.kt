@@ -5,7 +5,6 @@ import android.os.Bundle
 
 class NewWordActivity : AppCompatActivity() {
     private lateinit var editWordView: EditText
-
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_word)
@@ -24,7 +23,6 @@ class NewWordActivity : AppCompatActivity() {
             finish()
         }
     }
-
     companion object {
         const val EXTRA_REPLY = "com.example.android.wordlistsql.REPLY"
     }

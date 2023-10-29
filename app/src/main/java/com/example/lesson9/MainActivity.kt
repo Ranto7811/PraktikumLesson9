@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vitha.roomwordsample.R
 
 class MainActivity : AppCompatActivity() {
+    private val wordViewModel: WordViewModel by viewModels {
+        WordViewModelFactory((application as WordsApplication).repository)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
